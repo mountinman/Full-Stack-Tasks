@@ -1,4 +1,2 @@
-GET /
-GET /about-us
-GET /
-GET /about-us
+20:4 GET /about-us
+20:4 GET /

@@ -4,8 +4,14 @@ const fs = require("fs");
 const FILE_PATH = "URL_logger.txt";
 const port = 3000;
 
+
+
 app.use((req, res, next) => {
-  const logs = `${req.method} ${req.originalUrl}`;
+  let date = new Date();
+  let hours = date.getHours();
+  let min = date.getMinutes();
+  let time = hours + ":" + min;
+  const logs = `${time} ${req.method} ${req.originalUrl}`;
   fs.appendFile(FILE_PATH, logs + "\r\n", err => {
     if (err) throw err;
 
