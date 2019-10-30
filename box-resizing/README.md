@@ -1,7 +1,7 @@
 
 ## Into the project
 
-cd box-resizing-react
+cd box-resizing
 
 ### `npm install`
 
