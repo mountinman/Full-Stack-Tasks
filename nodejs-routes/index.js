@@ -10,7 +10,8 @@ app.use((req, res, next) => {
   let date = new Date();
   let hours = date.getHours();
   let min = date.getMinutes();
-  let time = hours + ":" + min;
+  let formatMin = min < 10 ? "0" + min : min;
+  let time = hours + ":" + formatMin;
   const logs = `${time} ${req.method} ${req.originalUrl}`;
   fs.appendFile(FILE_PATH, logs + "\r\n", err => {
     if (err) throw err;
