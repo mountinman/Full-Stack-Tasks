@@ -24,3 +24,24 @@
   margin-bottom: 50px;
   background: green;
 }
+.main-container {
+  display: flex;
+  width: 800px;
+  justify-content: space-around;
+}
+.input-fields {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  flex-direction: column;
+  height: 100px;
+  position: fixed;
+  right: 100px;
+  top: 210px;
+}
+input {
+  width: 320px;
+  height: 40px!important;
+  margin-bottom: 15px;
+  outline: none;
+}
