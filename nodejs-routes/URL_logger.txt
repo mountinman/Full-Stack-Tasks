@@ -1,1 +1,4 @@
-GET /about-usGET /
+GET /
+GET /about-us
+GET /
+GET /about-us
