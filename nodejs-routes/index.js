@@ -13,8 +13,45 @@ const port = 3000;
 //     if (err) throw err;
 //     console.log('The lyrics were updated!');
 // });
+
+
+// const readStats = () => {
+//     let result;
+//     try {
+//         result = fs.readFile(FILE_PATH);
+//     } catch (err) {
+//         console.error(err)
+//     }
+//     return result
+// }
+// const dumpStats = (stats) => {
+//     try {
+//         fs.writeFileSync(FILE_PATH, stats)
+//     } catch (err) {
+//         console.error(err)
+//     }
+// }
+
+// app.use((req, res, next) => {
+//     res.on('finish', () => {
+//         const stats = readStats()
+//         console.log(stats);
+//          const event = `${req.method} ${res.statusCode}`;
+//          console.log(event);
+//          dumpStats(stats)
+//     })
+//     next()
+// })
 app.use((req, res, next) => {
-    console.log(`${req.method} ${req.originalUrl}`) 
+    const logs = (`${req.method} ${req.originalUrl}`);
+    console.log(logs);
+    fs.appendFile('URL_logger.txt', logs, (err) => {
+        
+             if (err) throw err;
+        
+             console.log('The lyrics were updated!');
+        
+     });
     next()
  })
 
