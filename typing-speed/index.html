@@ -60,7 +60,9 @@
         $("textarea").keyup(checkSpeed);
       });
 
-      function checkSpeed() {}
+      function checkSpeed(e) {
+		  alert(e.target.value)
+	  }
     </script>
   </body>
 </html>
