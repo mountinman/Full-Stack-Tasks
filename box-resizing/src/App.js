@@ -1,4 +1,6 @@
 import React from "react";
+import Slider from "react-input-slider";
+
 import "./App.css";
 
 class App extends React.Component {
@@ -46,6 +48,13 @@ class App extends React.Component {
               />
             </div>
           </div>
+          <span className="slider-width">Width: {this.state.width}</span>
+          <Slider axis="x" xmax="500" x={this.state.width} 
+          onChange={({ x }) => this.setState(({ width: x }))}/>
+          
+          <span className="slider-width">Height: {this.state.height}</span>
+          <Slider axis="x" xmax="500" x={this.state.height} 
+          onChange={({ x }) => this.setState(({ height: x }))}/>
         </header>
       </div>
     );

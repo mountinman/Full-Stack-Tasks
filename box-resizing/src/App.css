@@ -37,11 +37,14 @@
   height: 100px;
   position: fixed;
   right: 100px;
-  top: 210px;
+  top: 240px;
 }
 input {
   width: 320px;
   height: 40px!important;
   margin-bottom: 15px;
   outline: none;
+}
+label{
+  margin-bottom: 20px;
 }
