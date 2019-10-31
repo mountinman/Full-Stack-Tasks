@@ -60,11 +60,11 @@
     function getRankings(games) {
       let ranking = {};
       games.forEach(game => {
-        let score = game.score.split(":");
+        let [homeScore, awayScore] = game.score.split(":");
 
         console.log(games);
         console.log(game);
-        console.log(score);
+        console.log(awayScore);
         console.log((ranking[game.homeTeam] = { name: game.homeTeam, score: 0 }));
       });
     }
