@@ -14,8 +14,8 @@
     <title>Document</title>
   </head>
   <body>
-	<h2>Team ranking</h2>
-	<button id="btn">CLICK TO GET SCORES</button>
+    <h2>Team ranking</h2>
+    <button id="btn">CLICK TO GET SCORES</button>
   </body>
   <script>
     const matches = [
@@ -58,11 +58,18 @@
     ];
 
     function getRankings(games) {
-      console.log("Hello");
-	}
-	$('#btn').on('click', function () {
-		const footbalRankings = getRankings(matches);
-	})
-    
+      let ranking = {};
+      games.forEach(game => {
+        let score = game.score.split(":");
+
+        console.log(games);
+        console.log(game);
+        console.log(score);
+        console.log((ranking[game.homeTeam] = { name: game.homeTeam, score: 0 }));
+      });
+    }
+    $("#btn").on("click", function() {
+      const footbalRankings = getRankings(matches);
+    });
   </script>
 </html>
