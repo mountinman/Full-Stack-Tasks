@@ -59,9 +59,17 @@
       $(function() {
         $("textarea").keyup(checkSpeed);
       });
+	  let inputFirstTime;
+	  let inputKeyStroke = 0;
+	  
+	  function checkSpeed(e) {
+		  inputKeyStroke++;
+		  inputFirstTime = new Date().getTime();
+		  console.log(inputFirstTime);
+		  console.log(inputKeyStroke);
+		//$('#speed').html();
 
-      function checkSpeed(e) {
-		  alert(e.target.value)
+
 	  }
     </script>
   </body>
