@@ -24,7 +24,6 @@ function Login() {
       emailInput === hardcodedCred.email &&
       passwordInput === hardcodedCred.password
     ) {
-      
       history.push("/users");
     } else {
       //bad combination
@@ -34,7 +33,17 @@ function Login() {
   return (
     <div className="login-page">
       <h2>Login In</h2>
-      <button type="button" tabindex="0" className="btn btn-lg" data-trigger="focus" data-toggle="popover" title="User Login Data" data-content="EMAIL:email@email.com  PASSWORD:password123">Click here for credentials</button>
+      <button
+        type="button"
+        tabIndex="0"
+        className="btn btn-lg"
+        data-trigger="focus"
+        data-toggle="popover"
+        title="User Login Data"
+        data-content="EMAIL:email@email.com  PASSWORD:password123"
+      >
+        Click here for credentials
+      </button>
 
       <form autoComplete="off" onSubmit={handleLoginSubmit}>
         <div className="form-group">
@@ -60,7 +69,7 @@ function Login() {
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          Submit
+          Login
         </button>
       </form>
     </div>
