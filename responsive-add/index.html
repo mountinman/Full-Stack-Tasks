@@ -5,22 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Responsive Add</title>
-	<style>
-	
-	</style>
+    <style>
+      @media all and (min-width: 960px) and (max-width: 1199px) {
+        #root-container {
+          border: 10px solid red;
+          display: flex;
+        }
+        .item {
+          width: 300px;
+        }
+      }
+      @media all and (min-width: 768px) and (max-width: 959px) {
+      }
+      @media all and (min-width: 480px) and (max-width: 767px) {
+      }
+      div {
+        border: 1px solid;
+        padding: 10px;
+      }
+      header {
+        border: 1px solid;
+      }
+      footer {
+        border: 1px solid;
+      }
+    </style>
   </head>
   <body id="root-container">
-	<header>
-		<h2>FAMILLIAR?</h2>
-	</header>
-	<div id="css"></div>
-    <div id="js"></div>
-    <div id="node"></div>
-    <div id="react"></div>
-    <div id="html"></div>
-	<div id="mongoDB"></div>
-	<footer>
-		<h2>JOIN OUR TEAM</h2>
-	</footer>
+    <header>
+      <h2>FAMILLIAR?</h2>
+    </header>
+    <div class="item item1" id="css">1</div>
+    <div class="item item2" id="js">2</div>
+    <div class="item item3" id="node">3</div>
+    <div class="item item4" id="react">4</div>
+    <div class="item item5" id="html">5</div>
+    <div class="item item6" id="mongoDB">6</div>
+    <footer>
+      <h2>JOIN OUR TEAM</h2>
+    </footer>
   </body>
 </html>
