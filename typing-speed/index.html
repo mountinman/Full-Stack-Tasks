@@ -65,16 +65,19 @@
       let inputLastTime = 0;
       function checkSpeed(e) {
         inputFirstTime = new Date().getTime();
-
         inputKeyStroke++;
-		inputTimeTotal += inputFirstTime - inputLastTime;
-		// inputFirstTime = inputLastTime;
-        console.log('first click:' + inputFirstTime);
-		console.log('number of strokes:' + inputKeyStroke);
-		// console.log(inputTimeTotal);
-        // console.log((inputKeyStroke / inputTimeTotal) * 60000);
-		//$('#speed').html();
-		
+        if (inputLastTime != 0) {
+          inputTimeTotal += inputFirstTime - inputLastTime;
+
+          console.log("first click:" + inputFirstTime);
+          console.log("last click:" + inputLastTime);
+
+          console.log("number of strokes:" + inputKeyStroke);
+          // console.log(inputTimeTotal);
+          // console.log((inputKeyStroke / inputTimeTotal) * 60000);
+          //$('#speed').html();
+        }
+        inputLastTime = inputFirstTime;
       }
     </script>
   </body>
