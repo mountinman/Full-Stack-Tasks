@@ -61,11 +61,14 @@
       let ranking = {};
       games.forEach(game => {
         let [homeScore, awayScore] = game.score.split(":");
+		if(!ranking[game.homeTeam]) ranking[game.homeTeam] = { name: game.homeTeam, score: 0 };
+		if(!ranking[game.awayTeam]) ranking[game.awayTeam] = { name: game.awayTeam, score: 0 };
+		if(game.score = null) ranking[game.homeTeam || game.awayTeam].score  = 0;
+        // console.log(games);
+        // console.log(game);
+        // console.log(awayScore);
+		console.log((ranking[game.homeTeam]));
 
-        console.log(games);
-        console.log(game);
-        console.log(awayScore);
-        console.log((ranking[game.homeTeam] = { name: game.homeTeam, score: 0 }));
       });
     }
     $("#btn").on("click", function() {
