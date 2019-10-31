@@ -50,3 +50,8 @@ form {
   .login-page{
       text-align: center;
   }
+  .btn-lg {
+    color: black;
+    margin-bottom: 40px;
+    border: 1px solid rgb(218, 214, 214);
+}

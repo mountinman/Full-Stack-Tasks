@@ -12,8 +12,8 @@ function App() {
       <BrowserRouter>
         <div>
           <NavBar />
-          <Route path="/" exact component={Users}></Route>
-          <Route path="/login" exact component={Login}></Route>
+          <Route path="/" exact component={Login}></Route>
+          <Route path="/users" exact component={Users}></Route>
           <Route path="/todo" component={Todo}></Route>
         </div>
       </BrowserRouter>

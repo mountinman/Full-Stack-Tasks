@@ -24,10 +24,7 @@ function Login() {
       emailInput === hardcodedCred.email &&
       passwordInput === hardcodedCred.password
     ) {
-      //combination is good. Log them in.
-      //this token can be anything. You can use random.org to generate a random string;
-      const token = "123456abcdef";
-      sessionStorage.setItem("auth-token", token);
+      
       history.push("/users");
     } else {
       //bad combination
@@ -37,6 +34,8 @@ function Login() {
   return (
     <div className="login-page">
       <h2>Login In</h2>
+      <button type="button" tabindex="0" className="btn btn-lg" data-trigger="focus" data-toggle="popover" title="User Login Data" data-content="EMAIL:email@email.com  PASSWORD:password123">Click here for credentials</button>
+
       <form autoComplete="off" onSubmit={handleLoginSubmit}>
         <div className="form-group">
           <input
