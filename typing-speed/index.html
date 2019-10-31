@@ -49,11 +49,12 @@
     <p>Characters per minute: <span id="speed"></span></p>
 
     <script>
+      let charPerMin;
       document
         .getElementById("fake-form")
         .addEventListener("submit", function(e) {
           e.preventDefault();
-
+          $("#speed").html(charPerMin);
           console.log("Yes you clicked");
         });
       $(function() {
@@ -69,13 +70,7 @@
         if (inputLastTime != 0) {
           inputTimeTotal += inputFirstTime - inputLastTime;
 
-          console.log("first click:" + inputFirstTime);
-          console.log("last click:" + inputLastTime);
-
-          console.log("number of strokes:" + inputKeyStroke);
-          // console.log(inputTimeTotal);
-          console.log(Math.round((inputKeyStroke / inputTimeTotal) * 60000) );
-          //$('#speed').html();
+          charPerMin = Math.round((inputKeyStroke / inputTimeTotal) * 60000);
         }
         inputLastTime = inputFirstTime;
       }
