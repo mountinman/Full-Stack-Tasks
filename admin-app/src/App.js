@@ -3,19 +3,18 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Todo from "./components/Todo";
 import Users from "./components/Users";
+import NavBar from "./components/NavBar";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-      </header>
+    <div className="ui container">
       <BrowserRouter>
         <div>
-          <Route path="/" exact component={Login} />
-          <Route path="/todo" exact component={Todo} />
-          <Route path="/users" exact component={Users} />
+          <NavBar />
+          <Route path="/" exact component={Users}></Route>
+          <Route path="/login" exact component={Login}></Route>
+          <Route path="/todo" component={Todo}></Route>
         </div>
       </BrowserRouter>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Todo(props) {
+function Todo() {
   return (
     <div>
       <p>Todo</p>
