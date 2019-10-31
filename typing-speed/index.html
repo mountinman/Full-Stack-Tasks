@@ -59,18 +59,23 @@
       $(function() {
         $("textarea").keyup(checkSpeed);
       });
-	  let inputFirstTime;
-	  let inputKeyStroke = 0;
-	  
-	  function checkSpeed(e) {
-		  inputKeyStroke++;
-		  inputFirstTime = new Date().getTime();
-		  console.log(inputFirstTime);
-		  console.log(inputKeyStroke);
+      let inputFirstTime;
+      let inputKeyStroke = 0;
+      let inputTimeTotal = 0;
+      let inputLastTime = 0;
+      function checkSpeed(e) {
+        inputFirstTime = new Date().getTime();
+
+        inputKeyStroke++;
+		inputTimeTotal += inputFirstTime - inputLastTime;
+		// inputFirstTime = inputLastTime;
+        console.log('first click:' + inputFirstTime);
+		console.log('number of strokes:' + inputKeyStroke);
+		// console.log(inputTimeTotal);
+        // console.log((inputKeyStroke / inputTimeTotal) * 60000);
 		//$('#speed').html();
-
-
-	  }
+		
+      }
     </script>
   </body>
 </html>
