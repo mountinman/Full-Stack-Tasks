@@ -7,6 +7,9 @@
     <title>Responsive Add</title>
     <style>
       @media all and (min-width: 1160px) and (max-width: 1680px) {
+        div {
+          padding: 15px;
+        }
         .main-container {
           display: flex;
         }
@@ -72,17 +75,17 @@
         }
         .logos {
           display: flex;
-          flex-direction: column;
           flex-wrap: wrap;
         }
         .item {
-          display: flex;
-          align-items: center;
-          width: 50%;
-          flex: 1;
+          flex-basis: 400px;
+          padding: 25px;
+          flex-grow: 1;
+         
         }
         img {
-          width: 100%;
+          width: 400px;
+          height: 400px;
         }
         .item1 {
           background: #fbfdfd;
@@ -112,10 +115,6 @@
       }
       @media all and (min-width: 480px) and (max-width: 767px) {
       }
-
-      div {
-        padding: 15px;
-      }
     </style>
   </head>
   <body>
@@ -128,9 +127,13 @@
           <div class="item item1"><img src="assets/css.svg" alt="css" /></div>
           <div class="item item2"><img src="assets/js.png" alt="js" /></div>
           <div class="item item3"><img src="assets/node.svg" alt="node" /></div>
-          <div class="item item4"><img src="assets/react.svg" alt="react" /></div>
+          <div class="item item4">
+            <img src="assets/react.svg" alt="react" />
+          </div>
           <div class="item item5"><img src="assets/html.svg" alt="html" /></div>
-          <div class="item item6"><img src="assets/mongo.svg" alt="mongo" /></div>
+          <div class="item item6">
+            <img src="assets/mongo.svg" alt="mongo" />
+          </div>
           <div class="item item7">
             <h2>JOIN OUR TEAM</h2>
             <img src="assets/cmg.png" alt="cmg" />
