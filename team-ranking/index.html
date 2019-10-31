@@ -60,29 +60,34 @@
     function getRankings(games) {
       let ranking = {};
       games.forEach(game => {
-        let [homeScore, awayScore] = game.score.split(":");
-		if(!ranking[game.homeTeam]) ranking[game.homeTeam] = { name: game.homeTeam, points: 0 };
-		if(!ranking[game.awayTeam]) ranking[game.awayTeam] = { name: game.awayTeam, points: 0 };
-		if(game.score = null) ranking[game.homeTeam && game.awayTeam].points  = 0;
-		if(homeScore > awayScore){
-			ranking[game.homeTeam].points += 3;
-		}else if (homeScore < awayScore){
-			ranking[game.awayTeam].points += 3;
-		}else{
-			ranking[game.homeTeam].points++;
-			ranking[game.awayTeam].points++;
-		}
+        if (game.score != null) {
+          let [homeScore, awayScore] = game.score.split(":");
+          if (!ranking[game.homeTeam])
+            ranking[game.homeTeam] = { name: game.homeTeam, points: 0 };
+          if (!ranking[game.awayTeam])
+            ranking[game.awayTeam] = { name: game.awayTeam, points: 0 };
+          if ((game.score = null))
+            ranking[game.homeTeam && game.awayTeam].points = 0;
+          if (homeScore > awayScore) {
+            ranking[game.homeTeam].points += 3;
+          } else if (homeScore < awayScore) {
+            ranking[game.awayTeam].points += 3;
+          } else {
+            ranking[game.homeTeam].points++;
+            ranking[game.awayTeam].points++;
+          }
+        }
+
         // console.log(games);
         // console.log(game);
         // console.log(awayScore);
-		console.log((ranking[game.homeTeam]));
-		console.log((ranking[game.awayTeam]));
-
-
+        console.log(ranking[game.homeTeam]);
+        console.log(ranking[game.awayTeam]);
       });
     }
     $("#btn").on("click", function() {
       const footbalRankings = getRankings(matches);
+      console.log(footbalRankings);
     });
   </script>
 </html>
