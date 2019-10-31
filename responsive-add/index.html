@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Responsive Add</title>
     <style>
-      @media all and (min-width: 960px) and (max-width: 1680px) {
+      @media all and (min-width: 1160px) and (max-width: 1680px) {
         .main-container {
           display: flex;
         }
@@ -17,7 +17,7 @@
           background: rgb(177, 57, 41);
         }
         .blue-background {
-          background: rgb(13, 48, 75);
+          background: rgb(48, 79, 103);
         }
         .logos {
           display: flex;
@@ -25,7 +25,7 @@
         .item {
           display: flex;
           align-items: center;
-		  flex: 1;
+          flex: 1;
         }
         img {
           width: 100%;
@@ -50,17 +50,71 @@
         }
         .item7 {
           display: flex;
+          flex-direction: column;
           align-items: center;
           text-align: center;
           color: whitesmoke;
         }
       }
-      @media all and (min-width: 768px) and (max-width: 959px) {
+      @media all and (min-width: 768px) and (max-width: 1159px) {
+        .main-container {
+          display: flex;
+          flex-direction: column;
+        }
+        .familiar {
+          display: flex;
+          justify-content: center;
+          color: whitesmoke;
+          background: rgb(177, 57, 41);
+        }
+        .blue-background {
+          background: rgb(48, 79, 103);
+        }
+        .logos {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+        }
+        .item {
+          display: flex;
+          align-items: center;
+          width: 50%;
+          flex: 1;
+        }
+        img {
+          width: 100%;
+        }
+        .item1 {
+          background: #fbfdfd;
+        }
+        .item2 {
+          background: rgb(240, 219, 79);
+        }
+        .item3 {
+          background: #2f6d51;
+        }
+        .item4 {
+          background: #4b4c47;
+        }
+        .item5 {
+          background: #a3b540;
+        }
+        .item6 {
+          background: #e4b632;
+        }
+        .item7 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          color: whitesmoke;
+        }
       }
       @media all and (min-width: 480px) and (max-width: 767px) {
       }
+
       div {
-        padding: 10px;
+        padding: 15px;
       }
     </style>
   </head>
@@ -72,12 +126,15 @@
       <div class="blue-background">
         <div class="logos">
           <div class="item item1"><img src="assets/css.svg" alt="css" /></div>
-          <div class="item item2"><img src="assets/js.png" alt="css" /></div>
-          <div class="item item3"><img src="assets/node.svg" alt="css" /></div>
-          <div class="item item4"><img src="assets/react.svg" alt="css" /></div>
-          <div class="item item5"><img src="assets/html.svg" alt="css" /></div>
-          <div class="item item6"><img src="assets/mongo.svg" alt="css" /></div>
-          <div class="item item7"><h2>JOIN OUR TEAM</h2></div>
+          <div class="item item2"><img src="assets/js.png" alt="js" /></div>
+          <div class="item item3"><img src="assets/node.svg" alt="node" /></div>
+          <div class="item item4"><img src="assets/react.svg" alt="react" /></div>
+          <div class="item item5"><img src="assets/html.svg" alt="html" /></div>
+          <div class="item item6"><img src="assets/mongo.svg" alt="mongo" /></div>
+          <div class="item item7">
+            <h2>JOIN OUR TEAM</h2>
+            <img src="assets/cmg.png" alt="cmg" />
+          </div>
         </div>
       </div>
     </div>
