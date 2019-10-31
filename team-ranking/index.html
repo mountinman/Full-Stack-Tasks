@@ -15,7 +15,8 @@
   </head>
   <body>
     <h2>Team ranking</h2>
-    <button id="btn">CLICK TO GET SCORES</button>
+    <button style="margin-bottom: 15px;" id="btn">CLICK TO GET SCORES</button>
+    <div id="games-rating"></div>
   </body>
   <script>
     const matches = [
@@ -77,17 +78,24 @@
             ranking[game.awayTeam].points++;
           }
         }
-
-        // console.log(games);
-        // console.log(game);
-        // console.log(awayScore);
-        console.log(ranking[game.homeTeam]);
-        console.log(ranking[game.awayTeam]);
       });
+      return Object.values(ranking).sort((a, b) =>
+        a.points > b.points ? -1 : 1
+      );
     }
     $("#btn").on("click", function() {
       const footbalRankings = getRankings(matches);
       console.log(footbalRankings);
+      var html = "<table border='1|1'>";
+      for (var i = 0; i < footbalRankings.length; i++) {
+        html += "<tr>";
+        html += "<td style='padding:5px;'>" + footbalRankings[i].name + "</td>";
+        html += "<td style='padding:5px;'>" + footbalRankings[i].points + "</td>";
+
+        html += "</tr>";
+      }
+      html += "</table>";
+      $("#games-rating").html(html);
     });
   </script>
 </html>
