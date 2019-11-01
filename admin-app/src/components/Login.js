@@ -32,7 +32,7 @@ function Login() {
   };
   return (
     <div className="login-page">
-      <h2>Login In</h2>
+      <h3>Login In</h3>
       <button
         type="button"
         tabIndex="0"

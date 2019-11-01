@@ -44,14 +44,14 @@ class User extends Component {
     let s = this.state.s;
 
     users = users.filter(function(user) {
-      return user.name.toLowerCase().indexOf(s) !== -1; // returns true or false
+      return user.name.toLowerCase().indexOf(s) !== -1; 
     });
     this.setState({ filteredUsers: users });
   };
 
-  renderTableHeader = () => {
-    console.log(this.state.filteredUsers);
-  };
+  openDetails = (e) => {
+      console.log(e.target);
+  }
 
   renderTableData() {
     return this.state.filteredUsers.map((user, index) => {
@@ -59,7 +59,9 @@ class User extends Component {
       return (
         <tr key={index}>
           <td>{id}</td>
-          <td>{name}</td>
+          <td 
+          style={{cursor:'pointer'}}
+          onClick={this.openDetails}>{name}</td>
           <td>{username}</td>
           <td>{email}</td>
         </tr>
@@ -89,7 +91,6 @@ class User extends Component {
             {this.renderTableData()}
           </tbody>
         </table>
-        <button onClick={this.renderTableHeader}>Click</button>
       </div>
     );
   }
