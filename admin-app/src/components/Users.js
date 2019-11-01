@@ -6,7 +6,9 @@ class User extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: []
+      users: [],
+      filteredUsers: [],
+      s: ""
     };
   }
 
@@ -15,14 +17,44 @@ class User extends Component {
       .get("https://jsonplaceholder.typicode.com/users")
       .then(response => {
         this.setState({ users: response.data });
+        this.setState({ filteredUsers: response.data });
       })
       .catch(error => {
         console.log(error);
       });
   }
 
+  componentWillReceiveProps = nextProps => {
+    this.setState(
+      {
+        users: nextProps.users,
+        filteredUsers: nextProps.users
+      },
+      () => this.filterList()
+    );
+  };
+
+  searchList = e => {
+    const s = e.target.value.toLowerCase();
+    this.setState({ s }, () => this.filterList());
+  };
+
+  filterList = () => {
+    let users = this.state.users;
+    let s = this.state.s;
+
+    users = users.filter(function(user) {
+      return user.name.toLowerCase().indexOf(s) !== -1; // returns true or false
+    });
+    this.setState({ filteredUsers: users });
+  };
+
+  renderTableHeader = () => {
+    console.log(this.state.filteredUsers);
+  };
+
   renderTableData() {
-    return this.state.users.map((user, index) => {
+    return this.state.filteredUsers.map((user, index) => {
       const { id, name, username, email } = user;
       return (
         <tr key={index}>
@@ -34,14 +66,18 @@ class User extends Component {
       );
     });
   }
-  renderTableHeader() {
-    console.log(this.state.users);
-  }
 
   render() {
     return (
       <div>
         <NavBar></NavBar>
+        <input
+          type="text"
+          placeholder="Search users"
+          onChange={this.searchList}
+          value={this.state.s}
+        ></input>
+
         <table id="users">
           <tbody>
             <tr>
@@ -53,7 +89,7 @@ class User extends Component {
             {this.renderTableData()}
           </tbody>
         </table>
-        <button onClick={this.renderTableHeader.bind(this)}>Click</button>
+        <button onClick={this.renderTableHeader}>Click</button>
       </div>
     );
   }
