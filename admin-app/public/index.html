@@ -68,7 +68,10 @@
     <script>
       $(function() {
         $('[data-toggle="popover"]').popover();
-        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="tooltip"]').tooltip();
+        $("#myModal").on("shown.bs.modal", function() {
+          $("#myInput").trigger("focus");
+        });
       });
     </script>
   </body>
