@@ -109,7 +109,7 @@ class User extends Component {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  Modal title
+                  {this.state.user.name} details:
                 </h5>
                 <button
                   type="button"
@@ -121,7 +121,10 @@ class User extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                {this.state.user.name}
+                <p><strong>Name:</strong> {this.state.user.name}</p>
+                <p><strong>Email:</strong> {this.state.user.email}</p>
+                <p><strong>Phone:</strong> {this.state.user.phone}</p>
+                <p><strong>Website:</strong> {this.state.user.website}</p>
               </div>
             </div>
           </div>
